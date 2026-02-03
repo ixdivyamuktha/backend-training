@@ -89,7 +89,7 @@ select  count(*) from  courses group by fees;
 
 select  course_id from enrollments group by course_id having count(course_id) > 3;
 select  age from students group by age having avg(age)>21;
-select  course_id from enrollments where student_id is not null group by course_id having count(course_id)>2;
+select  course_id from enrollments group by course_id having count(course_id)>2;
 --Task 6
 select  * from students where age>20 order by age ;
 select  count(*) from students where name like '%a%';
