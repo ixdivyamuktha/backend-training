@@ -95,4 +95,4 @@ select  * from students where age>20 order by age ;
 select  count(*) from students where name like '%a%';
 select  * from courses where fees between 1000 and 5000  order by fees ;
 select  * from students where active_flag=0 and age is not null;
-select  student_id from enrollments group by student_id having student_id>1;
+select  student_id from enrollments group by student_id having count(student_id)>1;
