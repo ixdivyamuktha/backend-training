@@ -1,0 +1,4 @@
+select c.customers_id, c.customer_name, o.order_id, o.amount, o.order_date from customers c left join orders o on c.customers_id = o.customer_id union select c.customers_id, c.customer_name, o.order_id, o.amount, o.order_date from customers c right join orders o on c.customers_id = o.customer_id;
+select c.customers_id, c.customer_name, o.order_id, o.amount, o.order_date from customers c full outer join orders o on c.customers_id = o.customer_id;
+select e.emp_id, e.emp_name, d.dept_id, d.dept_name from employees e full outer join departments d on e.dept_id = d.dept_id;
+select e.emp_id, e.emp_name, d.dept_id, d.dept_name from employees e left join departments d on e.dept_id = d.dept_id union select e.emp_id, e.emp_name, d.dept_id, d.dept_name from employees e right join departments d on e.dept_id = d.dept_id;
