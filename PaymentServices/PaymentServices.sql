@@ -23,10 +23,6 @@ create table Payments (
     updated_at           datetime      not null default getdate()
 );
 
--- only one success payment per order
-/*create unique index ux_payments_onesuccessperorder
-on Payments(order_id)
-where status = 'SUCCESS';*/
 
 create table Refunds (
     id                    int identity(1,1) primary key,
