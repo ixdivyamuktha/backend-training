@@ -5,14 +5,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== circular dependency demo ===");
         System.out.println("First try: constructor injection on both sides (should fail)");
-        System.out.println("Please see ServiceA and ServiceB constructors commented out above.");
         try {
             ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
             ServiceA serviceA = context.getBean(ServiceA.class);
             serviceA.doSomething();
-            System.out.println("[SUCCESS] Application started with setter injection to resolve circular dependency");
+            System.out.println("Application started with setter injection to resolve circular dependency");
         } catch (Exception e) {
             System.out.println("[ERROR] " + e.getMessage());
             System.out.println("Circular dependency detected when using constructors.");
